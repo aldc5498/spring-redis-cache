@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/redis_demo
+    username: root
+    password: Test1234@
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  redis:
+    host: localhost    # Redis server hostname or IP address
+    port: 6379   # Redis server port (default is 6379)
+    password: test1234@  # Redis server password (if required)
+
+    # Cache-related configuration
+  cache:
+    type: redis               # Cache type (use "redis" for Redis cache)
+    redis:
+      key-prefix: myapp       # Prefix for cache keys
+      time-to-live: 600       # Default cache TTL (in seconds)
+      cache-null-values: true # Cache null values
